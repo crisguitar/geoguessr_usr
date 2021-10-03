@@ -43,9 +43,9 @@ const puppeteer = require('puppeteer');
 		await page.click('[name="password-2"]');
 		await page.keyboard.type('the password');
 
-		await page.click('button.button--medium');
+		await page.click('button[type=submit]');
 
-		await page.waitForSelector('.splash-message');
+		await page.waitForXPath("//div[contains(., 'Good job!')]");
 
 		console.log('Registration finished!');
 
